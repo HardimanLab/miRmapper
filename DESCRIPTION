@@ -1,0 +1,36 @@
+Package: miRmapper
+Title: A package for the S4 miRmapper class
+Version: 0.0.0.9000
+Authors@R: person("Jonathan", "Simpson", email = "simpsojo@musc.edu", role = c("aut", "cre"))
+Description: This package allows for the implementation of the S4 class called 'miRmapper'.
+  miRmapper constructs a miRmapper object that, through its methods, can be used for analyzing
+  the predicted impact that micro RNAs have on the post transcriptional regulation of mRNAs. 
+  The user will provide the list of miRNAs of interest and the predicted target genes for each, 
+  as well as a list of the differentially expressed genes from the sequencing experiment. The
+  various methods of the miRmapper class will generate metrics and plots of the interactions.
+Depends: 
+  R (>= 3.4.0)
+Imports:
+  gplots,
+  ggplot2,
+  reshape2,
+  ggdendro,
+  plyr
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Collate: 
+    'miRmapper.R'
+    'adjMat.R'
+    'barPlot.R'
+    'dendrogram.R'
+    'getAdjmat.R'
+    'getDEgenes.R'
+    'getImpact.R'
+    'getInteractions.R'
+    'identityPlot.R'
+    'initialize.R'
+    'runAnalysis.R'
+    'setDEgenes.R'
+    'setInteractions.R'
+RoxygenNote: 6.0.1
