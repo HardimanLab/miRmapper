@@ -4,8 +4,10 @@ setMethod('initialize', 'miRmapper',
             # Remove 'NA' values
             # Doesn't seem to work with lists
             #interactions <- interactions[complete.cases(interactions), ]
-            interactions = list(interactions[[1]][complete.cases(interactions)],
-                interactions[[2]][complete.cases(interactions)])
+            logicalMatrix = !sapply(Int, is.na)
+            logicalVector = as.logical(logicalMatrix[,1] * logicalMatrix[,2])
+            interactions = list(interactions[[1]][logicalVector], 
+                interactions[[2]][logicalVector])
             DEgenes <- DEgenes[!is.na(DEgenes)]
             DEgenes <- data.frame(DEgenes)
             .Object@interactions = interactions
