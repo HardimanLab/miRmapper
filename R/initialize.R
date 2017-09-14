@@ -8,8 +8,8 @@ setMethod('initialize', 'miRmapper',
             print(interactions)
             logicalMatrix = !sapply(Int, is.na)
             logicalVector = as.logical(logicalMatrix[,1] * logicalMatrix[,2])
-            interactions = list(interactions[[1]][logicalVector], 
-                interactions[[2]][logicalVector])
+            interactions = list(interactions[1][logicalVector], 
+                interactions[2][logicalVector])
             DEgenes <- DEgenes[!is.na(DEgenes)]
             DEgenes <- data.frame(DEgenes)
             .Object@interactions = interactions
