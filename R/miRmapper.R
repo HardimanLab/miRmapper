@@ -40,6 +40,6 @@ miRmapper <- setClass(
 
 )
 
-miRmapper <- function(interations = list(), DEgenes = list()) {
+miRmapper <- function(interactions = list(), DEgenes = list()) {
   new(Class = 'miRmapper', interactions, DEgenes)
 }
