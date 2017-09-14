@@ -4,6 +4,7 @@ setMethod('initialize', 'miRmapper',
             # Remove 'NA' values
             # Doesn't seem to work with lists
             #interactions <- interactions[complete.cases(interactions), ]
+            interactions[[2]]
             logicalMatrix = !sapply(Int, is.na)
             logicalVector = as.logical(logicalMatrix[,1] * logicalMatrix[,2])
             interactions = list(interactions[[1]][logicalVector], 
