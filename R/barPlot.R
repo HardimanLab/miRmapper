@@ -39,7 +39,7 @@ setMethod(f = "barPlot",
 
               dfm <- reshape2::melt(impacts[,c('miRNA', 'Percentage_of_Targets','Percentage_of_DE_Genes')], id.vars = 'miRNA' )
               plot <- ggplot2::ggplot(dfm , ggplot2::aes(x = reorder(miRNA, value), y = value, fill = variable)) +
-                ggplot2::geom_bar(stat = "identity", position="stack") +
+                ggplot2::geom_bar(stat = "identity", position="identity") +
                 ggplot2::ggtitle("Predicted miRNA Impact on Genes") +
                 ggplot2::xlab("miRNA") +
                 ggplot2::ylab("Percent") +
@@ -48,7 +48,7 @@ setMethod(f = "barPlot",
             } else {
               dfm <- reshape2::melt(impacts[, c('miRNA', 'Percentage_of_Targets')], id.vars = 'miRNA' )
               plot <- ggplot2::ggplot(dfm , ggplot2::aes(x = reorder(miRNA, value), y = value, fill = variable)) +
-                ggplot2::geom_bar(stat = "identity", position="stack") +
+                ggplot2::geom_bar(stat = "identity", position="identity") +
                 ggplot2::ggtitle("Predicted miRNA Impact on Genes") +
                 ggplot2::xlab("miRNA") +
                 ggplot2::ylab("Percent") +
